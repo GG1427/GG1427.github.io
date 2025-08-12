@@ -130,31 +130,23 @@ print(round(npv(cashflows, 0.08), 2))
 
   <!-- Reveal.js (ES modules) and plugins -->
   <script type="module">
-    import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.esm.js';
-    import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/plugins/markdown/markdown.esm.js';
-    import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/plugins/highlight/highlight.esm.js';
-    import Notes from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/plugins/notes/notes.esm.js';
-    import MathPlugin from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/plugins/math/math.esm.js';
+  import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.esm.js';
+  import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.esm.js';
+  import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.esm.js';
+  import Notes from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.esm.js';
+  import MathPlugin from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.esm.js';
 
-    Reveal.initialize({
-      // basic options
-      hash: true,
-      slideNumber: true,
-      transition: 'fade',
-      // plugins
-      plugins: [ Markdown, Highlight, Notes, MathPlugin ],
-      // Math plugin configuration (uses MathJax)
-      math: {
-        // use mathjax v3 from CDN
-        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-        // delimiters are default: \( \) and \[ \]
-      }
-    });
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    plugins: [ Markdown, Highlight, Notes, MathPlugin ],
+    math: {
+      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    }
+  });
+</script>
 
-    // Optionally initialize highlight.js manual (Reveal's plugin handles it,
-    // but explicitly registering is harmless)
-    // (No additional code required here because Highlight plugin registers automatically)
-  </script>
 
   <!-- Fallback for non-module browsers (optional) -->
   <script nomodule src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
