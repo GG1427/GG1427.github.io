@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/default.min.css">
   
   <style>
-    /* small styling tweaks */
     .email { font-weight: 600; color: #ffd166; }
     pre code { font-size: 0.9em; }
     .centered { display:flex; align-items:center; justify-content:center; height:100%; }
@@ -25,7 +24,7 @@
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title slide (HTML) -->
+      <!-- Title slide -->
       <section>
         <h1>Financial Formulas & Demo</h1>
         <p class="centered">
@@ -35,12 +34,8 @@
           Introduce yourself, state the scope: show PV, NPV examples, math rendering, fragments and code examples.
         </aside>
       </section>
-      <section>
-  <h1>Financial Formulas & Demo</h1>
-  <p>Email: 24f1001824@ds.study.iitm.ac.in</p>
-</section>
 
-      <!-- Markdown slide (uses Reveal Markdown plugin) -->
+      <!-- Markdown slide -->
       <section data-markdown>
         <script type="text/template">
 ## Key Concepts (Markdown slide)
@@ -50,14 +45,13 @@
 - Net Present Value (NPV) and simple cashflow example.
 
 > Use fragments to reveal bullets one-by-one.
-
         </script>
         <aside class="notes">
           This slide is written in Markdown. Use it to motivate why we discount cash flows.
         </aside>
       </section>
 
-      <!-- Slide with fragments (animated elements) -->
+      <!-- Slide with fragments -->
       <section>
         <h2>Discounting: definitions</h2>
         <ul>
@@ -66,11 +60,11 @@
           <li class="fragment">NPV of cashflows: \( \text{NPV} = \sum_{t=0}^{N} \dfrac{C_t}{(1+r)^t} \)</li>
         </ul>
         <aside class="notes">
-          Reveal each bullet as you explain: FV -> PV -> NPV. Note that r must be consistent (period/year).
+          Reveal each bullet as you explain: FV → PV → NPV.
         </aside>
       </section>
 
-      <!-- Slide with code block + syntax highlight -->
+      <!-- Code example -->
       <section>
         <h2>Code: NPV calculation (Python)</h2>
         <pre><code class="language-python">
@@ -87,25 +81,23 @@ cashflows = [-1000, 300, 400, 500]
 print(round(npv(cashflows, 0.08), 2))
         </code></pre>
         <aside class="notes">
-          Walk through the Python code: enumeration corresponds to t in formula. Show sample cashflow result.
+          Walk through the Python code: enumeration corresponds to t in formula. Show sample result.
         </aside>
       </section>
 
-      <!-- Slide with math-heavy formula (LaTeX) -->
+      <!-- Math-heavy formulas -->
       <section>
         <h2>Example: Perpetuity and Growing Perpetuity</h2>
         <p class="fragment">Perpetuity (constant cashflow \(C\) forever):</p>
         <p class="fragment">\( PV = \dfrac{C}{r} \)</p>
-
-        <p class="fragment">Growing perpetuity (growth \(g\), \(g<r\)):</p>
-        <p class="fragment">\( PV = \dfrac{C_1}{r - g} \), where \(C_1\) is cashflow next period.</p>
-
+        <p class="fragment">Growing perpetuity (\(g<r\)):</p>
+        <p class="fragment">\( PV = \dfrac{C_1}{r - g} \)</p>
         <aside class="notes">
-          Emphasize condition g &lt; r. Discuss intuition and risk implication.
+          Emphasize condition g &lt; r.
         </aside>
       </section>
 
-      <!-- Slide showing fragment transitions + inline code block -->
+      <!-- Step-by-step -->
       <section>
         <h2>Step-by-step NPV reveal</h2>
         <ol>
@@ -115,46 +107,44 @@ print(round(npv(cashflows, 0.08), 2))
           <li class="fragment">Interpret the sign of NPV</li>
         </ol>
         <aside class="notes">
-          Use this to guide live calculation or run the Python snippet from earlier.
+          Use this to guide live calculation.
         </aside>
       </section>
 
-      <!-- Contact slide -->
+      <!-- Contact -->
       <section>
         <h2>Contact</h2>
         <p>Email: <span class="email">24f1001824@ds.study.iitm.ac.in</span></p>
-        <p>Slides: local `index.html` or GitHub Pages URL after deployment.</p>
+        <p>Slides: local `index.html` or GitHub Pages link.</p>
         <aside class="notes">
-          Provide contact and invite questions.
+          Invite questions.
         </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js (ES modules) and plugins -->
+  <!-- Reveal.js (ES modules) -->
   <script type="module">
-  import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.esm.js';
-  import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.esm.js';
-  import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.esm.js';
-  import Notes from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.esm.js';
-  import MathPlugin from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.esm.js';
+    import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.esm.js';
+    import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.esm.js';
+    import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.esm.js';
+    import Notes from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.esm.js';
+    import MathPlugin from 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.esm.js';
 
-  Reveal.initialize({
-    hash: true,
-    slideNumber: true,
-    transition: 'fade',
-    plugins: [ Markdown, Highlight, Notes, MathPlugin ],
-    math: {
-      mathjax: null, // disable MathJax
-      katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js',
-      katexStylesheet: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
-    }
-  });
-</script>
-  
-  <!-- Fallback for non-module browsers (optional) -->
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'fade',
+      plugins: [ Markdown, Highlight, Notes, MathPlugin ],
+      math: {
+        mathjax: null,
+        katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js',
+        katexStylesheet: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
+      }
+    });
+  </script>
+
   <script nomodule src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-
 </body>
 </html>
