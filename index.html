@@ -142,12 +142,13 @@ print(round(npv(cashflows, 0.08), 2))
     transition: 'fade',
     plugins: [ Markdown, Highlight, Notes, MathPlugin ],
     math: {
-      mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+      mathjax: null, // disable MathJax
+      katex: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js',
+      katexStylesheet: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
     }
   });
 </script>
-
-
+  
   <!-- Fallback for non-module browsers (optional) -->
   <script nomodule src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 
